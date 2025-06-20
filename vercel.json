@@ -4,17 +4,24 @@
     {
       "src": "api/collect.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/collect",
-      "dest": "/api/collect.js",
-      "methods": ["GET"]
+      "dest": "/api/collect.js"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/index.html"
     }
   ]
 }
