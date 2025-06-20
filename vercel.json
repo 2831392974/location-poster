@@ -1,11 +1,20 @@
 {
   "version": 2,
-  "builds": [{
-    "src": "api/collect.js",
-    "use": "@vercel/node"
-  }],
-  "routes": [{
-    "src": "/api/collect",
-    "dest": "/api/collect.js"
-  }]
+  "builds": [
+    {
+      "src": "api/collect.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/collect",
+      "dest": "/api/collect.js",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
